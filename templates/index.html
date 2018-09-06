@@ -1,0 +1,26 @@
+{% extends "bootstrap/base.html" %}
+{#头部开始#}
+{% block title %}EasySS-Store{% endblock %}
+
+{% block styles %}
+    {{ super() }}
+    <link href="{{ url_for('static', filename='img/website_icon.png') }}" rel="shortcut icon">
+{% endblock %}
+
+{#头部结束#}
+
+
+
+
+
+{% block content %}
+    {#导航栏#}
+    {% block navbar %}
+        {% include "base/nav.html" %}
+    {% endblock %}
+    <button class="btn btn-success">按钮</button>
+    <p>这是一个flask项目</p>
+
+
+    {% include "base/footer.html" %}
+{% endblock %}

@@ -1,0 +1,74 @@
+{% extends "bootstrap/base.html" %}
+
+{% block title %}EasySS-Store登录{% endblock %}
+
+{% block styles %}
+    {{ super() }}
+    <link href="{{ url_for('static', filename='img/website_icon.png') }}" rel="shortcut icon">
+    <style>
+        .container {
+            display: table;
+            height: 100%;
+            margin-top: 10%;
+        }
+
+        .row {
+            display: table-cell;
+            vertical-align: middle;
+        }
+
+    </style>
+{% endblock %}
+{% block navbar %}
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+
+    </nav>
+{% endblock %}
+
+
+{% block content %}
+    <div class="container">
+        <div class="row"></div>
+        <div class="row">
+            {#  col-md-4表示合并4列，col-md-offset-4表示偏移4列 sm意思相同 #}
+            <div class="col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3">
+                <div class="page-header">
+                    <h1>欢迎您登录</h1>
+                </div>
+                {% for message in get_flashed_messages() %}
+                    <div class="alert alert-warning">
+                        <button type="button" class="close" data-dismiss="alter">×</button>
+                        {{ message }}
+                    </div>
+                {% endfor %}
+
+                <form action="/login" method="post">
+                    <div class="form-group">
+                        <label for="username">用户名</label>
+                        <input type="text" class="form-control" name="username" id="username" placeholder="请输入用户名">
+                    </div>
+                    <div class="form-group">
+                        <label for="passworld">密码</label>
+                        <input type="password" class="form-control" name="password" id="passworld" placeholder="请输入密码">
+                    </div>
+
+                    <div class="form-group">
+                        <input type="checkbox" name="rememberme" value="remember-me"> 记住我
+                    </div>
+
+
+                    <button type="submit" class="btn btn-primary">登录</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            {% include 'base/footer.html' %}
+
+        </div>
+    </div>
+
+
+{% endblock %}
