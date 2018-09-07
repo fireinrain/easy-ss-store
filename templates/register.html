@@ -1,6 +1,6 @@
 {% extends "bootstrap/base.html" %}
 
-{% block title %}EasySS-Store登录{% endblock %}
+{% block title %}EasySS-Store注册{% endblock %}
 
 {% block styles %}
     {{ super() }}
@@ -9,7 +9,7 @@
         .container {
             display: table;
             height: 100%;
-            margin-top: 10%;
+            margin-top: 6%;
         }
 
         .row {
@@ -51,6 +51,14 @@
                     <div class="form-group">
                         <label for="passworld">密码</label>
                         <input type="password" class="form-control" name="password" id="passworld" placeholder="请输入密码">
+                    </div>
+                    <div class="form-group">
+                        <label for="passworld">确认密码</label>
+                        <input type="password" class="form-control" name="password2" id="passworld" placeholder="请输入密码">
+                    </div>
+                    <div class="form-group">
+                        <label for="passworld">邮箱</label>
+                        <input type="email" class="form-control" name="email" id="email" placeholder="请输入邮箱">
                     </div>
 
                     <button type="submit" class="btn btn-primary">注册</button>

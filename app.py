@@ -1,6 +1,6 @@
 import os
 
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, redirect, url_for
 from flask_bootstrap import Bootstrap
 from flask_sqlalchemy import SQLAlchemy
 
@@ -71,7 +71,7 @@ def register():
     if request.method == "GET":
         return render_template("register.html")
     if request.method == "POST":
-        pass
+        return redirect(url_for('login'))
 
 
 
